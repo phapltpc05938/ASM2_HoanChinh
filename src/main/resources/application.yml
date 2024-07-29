@@ -1,0 +1,22 @@
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          facebook:
+            client-id: 1190403148757060
+            client-secret: b083f6b574c9f172c0e36ed9bf168f35
+            scope:
+              - email
+              - public_profile
+          google:
+            client-id: 196072799667-krk9h7jlpp2gv7kvnhhm66qmmch0q7ak.apps.googleusercontent.com
+            client-secret: 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
+            scope:
+              - email
+              - profile
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML
+    cache: false

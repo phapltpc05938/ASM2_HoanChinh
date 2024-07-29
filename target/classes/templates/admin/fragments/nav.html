@@ -1,0 +1,112 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title>Title</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+          crossorigin="anonymous" />
+    <script src="https://kit.fontawesome.com/a6d3b40f65.js" crossorigin="anonymous"></script>
+
+    <style>
+        .navbar-brand img {
+            width: 65px;
+            margin-right: 10px;
+        }
+
+        .navbar-nav .nav-link {
+            font-size: 16px;
+            padding: 10px 15px;
+        }
+
+        .navbar-nav .nav-link:hover {
+            background-color: #f8f9fa;
+            border-radius: 5px;
+        }
+
+        .navbar-nav .nav-link.active {
+            font-weight: bold;
+            color: #007bff;
+        }
+
+        .navbar-nav .dropdown-menu {
+            border-radius: 5px;
+        }
+
+        .navbar-nav .dropdown-item:hover {
+            background-color: #f8f9fa;
+        }
+
+        .navbar-nav .badge {
+            background-color: #ff0000;
+            color: white;
+        }
+
+        .navbar-toggler {
+            border: none;
+        }
+
+        .navbar-toggler-icon {
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand d-flex align-items-center" th:href="@{/home}">
+                    <img th:src="@{/../assets/Logo.png}" style="width:65px" alt="4IT Perfume Logo">
+                    4IT Perfume
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" style="font-size: 15px" th:id="${menuC}" th:href="@{/admin/customers}">Quản lý khách hàng</a>
+                        </li>
+                        <li class="nav-item ms-5">
+                            <a class="nav-link" th:id="${menuP}" th:href="@{/admin/products}">Quản lý sản phẩm</a>
+                        </li>
+                        <li class="nav-item ms-5">
+                            <a class="nav-link" th:id="${menuCa}" th:href="@{/admin/categories}">Quản lý nhãn hiệu</a>
+                        </li>
+                        <li class="nav-item ms-5">
+                            <a class="nav-link" th:id="${menuO}" th:href="@{/admin/orders}">Quản lý đơn hàng</a>
+                        </li>
+                        <li class="nav-item ms-5">
+                            <a class="nav-link" th:id="${menuR}" th:href="@{/admin/reports/statistical}">Thống kê doanh thu</a>
+                        </li>
+                        <li class="nav-item ms-5">
+                            <a class="nav-link" th:id="${menuI}" th:href="@{/admin/inventory}">Hàng tồn kho</a>
+                        </li>
+                      
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="accountDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Tài khoản</a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="accountDropdown">
+                                <li th:unless="${isLogin}"><a class="dropdown-item" th:href="@{/logout}">Đăng xuất</a></li>
+                               
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+            crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+            integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+            crossorigin="anonymous"></script>
+</body>
+</html>
